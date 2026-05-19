@@ -2,255 +2,232 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Order OCR Strict Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Order AI Reader - Gemini Total V7</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--b:#e5e7eb;--p:#16a34a;--s:#2563eb;--d:#0f172a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);font-family:Tahoma,Arial,sans-serif}
-.wrap{max-width:1100px;margin:auto;padding:16px}
-.card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.08);margin-bottom:16px}
-h1{margin:0 0 16px;font-size:28px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:768px){.grid,.actions{grid-template-columns:1fr !important}}
-input,select,button,textarea{width:100%;padding:14px;border:1px solid #dbe2ea;border-radius:14px;font-size:16px}
-button{border:none;color:#fff;font-weight:700;cursor:pointer}
-.p{background:var(--p)} .s{background:var(--s)} .d{background:var(--d)}
-.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-table{width:100%;border-collapse:collapse}
-th,td{border:1px solid var(--b);padding:10px;text-align:right}
-th{background:#eef4ff}
-td[contenteditable=true]{background:#fffef7}
-textarea{min-height:220px}
-small{color:#64748b}
+:root{--bg:#eef3f8;--card:#fff;--b:#e2e8f0;--text:#0f172a;--muted:#64748b;--p:#16a34a;--s:#2563eb;--d:#0f172a;--r:#dc2626;--w:#f59e0b;--soft:#f8fafc;--shadow:0 16px 38px rgba(15,23,42,.10)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);font-family:Tahoma,Arial,sans-serif;color:var(--text)}.wrap{max-width:1200px;margin:auto;padding:16px}.card{background:rgba(255,255,255,.96);border:1px solid rgba(226,232,240,.9);border-radius:26px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}h1{margin:0 0 8px;font-size:clamp(22px,3vw,32px);line-height:1.35}.sub{margin:0 0 16px;color:var(--muted);line-height:1.8;font-size:14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.actions4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}input,select,button,textarea{width:100%;padding:14px 15px;border:1px solid #dbe2ea;border-radius:16px;font-size:16px;font-family:Tahoma,Arial,sans-serif;background:#fff;color:var(--text)}input:focus,select:focus,textarea:focus{outline:2px solid rgba(37,99,235,.18);border-color:#93c5fd}button{border:none;color:#fff;font-weight:800;cursor:pointer;transition:.15s;min-height:48px}button:hover{filter:brightness(.96);transform:translateY(-1px)}button:disabled{opacity:.55;cursor:not-allowed;transform:none}.p{background:var(--p)}.s{background:var(--s)}.d{background:var(--d)}.r{background:var(--r)}.w{background:var(--w)}.tableWrap{overflow:auto;border-radius:18px;border:1px solid var(--b);background:#fff;-webkit-overflow-scrolling:touch}table{width:100%;border-collapse:collapse;min-width:780px}th,td{border:1px solid var(--b);padding:11px 10px;text-align:right;vertical-align:middle;font-size:15px}th{background:#eef4ff;font-weight:900;white-space:nowrap}td[contenteditable=true]{background:#fffef7;min-width:95px}.priceCell,.totalCell{font-weight:800}.totalCell{background:#f8fafc}.summaryBar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.summaryBox{background:var(--soft);border:1px solid var(--b);border-radius:18px;padding:13px}.summaryBox b{display:block;font-size:18px;margin-top:4px}.summaryBox span{color:var(--muted);font-size:13px}textarea{min-height:230px;line-height:1.9;resize:vertical}small{color:var(--muted);line-height:1.7;display:block;margin-top:8px}.status{padding:12px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0;color:#334155;line-height:1.7;margin-top:12px;white-space:pre-wrap;max-height:340px;overflow:auto}.ok{background:#ecfdf5;border-color:#bbf7d0}.err{background:#fef2f2;border-color:#fecaca}.warn{background:#fffbeb;border-color:#fde68a}.rowBtns{display:flex;gap:6px}.mini{padding:7px 9px;border-radius:11px;font-size:13px;min-height:36px}.hidden{display:none}.pill{display:inline-block;background:#e0f2fe;color:#075985;border:1px solid #bae6fd;border-radius:999px;padding:5px 11px;font-size:12px;margin-inline-start:6px;white-space:nowrap}.hint{background:#f1f5f9;border:1px dashed #cbd5e1;border-radius:16px;padding:10px 12px;color:#475569;font-size:13px;line-height:1.7;margin-top:12px}
+@media(max-width:900px){.actions{grid-template-columns:repeat(2,minmax(0,1fr))}.actions button:first-child{grid-column:1/-1}.actions4{grid-template-columns:repeat(2,minmax(0,1fr))}.summaryBar{grid-template-columns:1fr}}
+@media(max-width:640px){.wrap{padding:10px}.card{border-radius:20px;padding:14px;margin-bottom:12px}.grid,.actions,.actions4{grid-template-columns:1fr}input,select,button,textarea{font-size:15px;padding:13px;border-radius:14px}.tableWrap{border-radius:14px;margin-inline:-2px}table{min-width:720px}th,td{padding:9px 8px;font-size:14px}.rowBtns{flex-direction:column}.mini{font-size:12px}.sub{font-size:13px}textarea{min-height:260px}}
+@media(min-width:1000px){.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:start}.layout .card{margin-bottom:0}.messageCard{position:sticky;top:16px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="card">
-<h1>قارئ الأوردرات الصارم</h1>
-<div class="grid">
-<input id="customer" placeholder="اسم العميل">
-<input id="phone" placeholder="رقم العميل">
-<input id="location" placeholder="لينك اللوكيشن">
-<select id="day">
-<option>اليوم</option><option selected>غدًا</option><option>بعد غد</option><option value="custom">تاريخ مخصص</option>
+  <div class="card">
+    <h1>قارئ الأوردرات بالذكاء الاصطناعي <span class="pill">Gemini Full Price List V7</span></h1>
+    <p class="sub">تحليل صورة / PDF / Excel، تسعير تلقائي من الليستة، إجمالي طلبية، وتصدير Excel ورسالة واتساب. الواجهة مناسبة للموبايل والكمبيوتر.</p>
+    <div class="grid">
+      <input id="customer" placeholder="اسم العميل"><input id="phone" placeholder="رقم العميل"><input id="location" placeholder="لينك اللوكيشن">
+      <select id="day"><option>اليوم</option><option selected>غدًا</option><option>بعد غد</option><option value="custom">تاريخ مخصص</option></select>
+    </div>
+    <input id="customDay" placeholder="اكتب التاريخ" style="display:none;margin-top:12px">
+    <div class="grid" style="margin-top:12px">
+      <input id="apiKey" value="AIzaSyA-e6Yav_51L8bqBe4MKeO05srNWRwUtEs" placeholder="Gemini API Key">
+      <select id="model">
+<option value="gemini-2.5-flash" selected>Gemini 2.5 Flash — الأفضل للأوردرات</option>
+<option value="gemini-3.1-flash-lite">Gemini 3.1 Flash Lite — أعلى حد يومي</option>
+<option value="gemini-3-flash">Gemini 3 Flash</option>
+<option value="gemini-2.5-flash-lite">Gemini 2.5 Flash Lite</option>
 </select>
+    </div>
+    <input type="file" id="fileInput" accept="image/*,.pdf,.xlsx,.xls,.csv" style="margin-top:12px">
+    <small>ملاحظة: تم ترك الموديلات التي لها Limits فعلية فقط في حسابك. لو ظهر Quota limit: 0 فالموديل غير متاح على الـ Free Tier. لا ترفع هذا الملف على موقع عام وفيه API Key ظاهر.</small>
+    <div class="actions" style="margin-top:12px">
+      <button class="p" id="readBtn">تحليل AI</button><button class="s" id="priceBtn">تسعير الليستة</button><button class="s" id="generateBtn">إنشاء الرسالة</button><button class="d" id="waBtn">فتح واتساب</button><button class="w" id="diagBtn">التشخيص</button>
+    </div>
+    <div id="status" class="status hidden"></div>
+  </div>
+  <div class="layout">
+    <div class="card">
+      <div class="tableWrap"><table><thead><tr><th>اسم الصنف</th><th>المواصفات</th><th>الوحدة</th><th>الكمية</th><th>سعر الوحدة</th><th>الإجمالي</th><th>إجراءات</th></tr></thead><tbody id="tbody"></tbody></table></div>
+      <div class="summaryBar"><div class="summaryBox"><span>عدد الصفوف</span><b id="rowsCount">0</b></div><div class="summaryBox"><span>إجمالي الطلبية</span><b id="grandTotal">0</b></div><div class="summaryBox"><span>حالة التسعير</span><b id="priceState">—</b></div></div>
+      <div class="actions4" style="margin-top:12px"><button class="s" id="addRowBtn">إضافة صف</button><button class="r" id="clearBtn">مسح الجدول</button><button class="d" id="copyBtn">نسخ الرسالة</button><button class="s" id="excelBtn">تصدير Excel</button></div>
+      <div class="hint">تم تحديث ليستة الأسعار من PDF مايو/فبراير 2026. التسعير يطابق النوع + المقاس + بلد المنشأ بدقة، مثل: كراب استيكس صيني = 150 وكراب استيكس هندي = 280.</div>
+    </div>
+    <div class="card messageCard"><textarea id="message" placeholder="الرسالة الجاهزة"></textarea></div>
+  </div>
 </div>
-<input id="customDay" placeholder="اكتب التاريخ" style="display:none;margin-top:12px">
-<input id="apiKey" value="K8@keypart188957" placeholder="OCR.space API Key" style="margin-top:12px">
-<input type="file" id="fileInput" accept="image/*,.xlsx,.xls" style="margin-top:12px">
-<small>OCR.space أولاً، ثم Tesseract احتياطيًا. كل تحديث يبدأ أوردر جديد.</small>
-<div class="actions" style="margin-top:12px">
-<button class="p" id="readBtn">قراءة الملف</button>
-<button class="s" id="generateBtn">إنشاء الرسالة</button>
-<button class="d" id="waBtn">فتح واتساب</button>
-<button class="s" id="excelBtn">تصدير Excel</button>
-</div>
-</div>
-
-<div class="card">
-<table>
-<thead><tr><th>اسم الصنف</th><th>الوحدة</th><th>الكمية</th><th>السعر</th></tr></thead>
-<tbody id="tbody"></tbody>
-</table>
-<button class="s" id="addRowBtn" style="margin-top:12px">إضافة صف</button>
-</div>
-
-<div class="card">
-<textarea id="message" placeholder="الرسالة الجاهزة"></textarea>
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
-const PRICE_DB = {"باسا 5 ك": 170, "كراب استيكس صيني": 150, "كاليماري صيني": 160, "بلح مفتوح": 370, "جمبرى بالذيل 25-21": 1050, "جمبرى قشر 15-13": 1100, "سالمون هول فرش نرويجي": 1250};
-const tbody = document.getElementById('tbody');
-
-const PRODUCT_RULES = [
-  {keys:['سمك باسا','باسا'], name:'باسا 5 ك', unit:'كرتونة', qty:'2', price:170},
-  {keys:['كراب استيك','كراب استيكس'], name:'كراب استيكس صيني', unit:'باكيت', qty:'5', price:150},
-  {keys:['بوش بقري'], name:'بوش بقري', unit:'كيلو', qty:'10', price:''},
-  {keys:['جمبري بديل','20/21','بالذيل'], name:'جمبرى بالذيل 25-21', unit:'كرتونة', qty:'1', price:1050},
-  {keys:['سالمون','200'], name:'سالمون فريش 200 جرام', unit:'كرتونة', qty:'1', price:''},
-  {keys:['جامبو'], name:'جمبري جامبو', unit:'كرتونة', qty:'1', price:''},
-  {keys:['كاليماري','كلماري'], name:'كاليماري صيني', unit:'كرتونة', qty:'1', price:160},
-  {keys:['بلح بحر','بلح مفتوح'], name:'بلح مفتوح', unit:'كرتونة', qty:'1', price:370}
+const tbody=document.getElementById('tbody');let lastRaw='',lastJson=null;
+const PRICE_LIST=[
+{name:'جمبرى لحم 20-16',aliases:['جمبري لحم 20-16','جمبرى لحم 16-20','جمبري مقشر 20-16','جمبرى مقشر 16-20','لحم 20/16','لحم 16/20'],price:1100},
+{name:'جمبرى لحم 25-21',aliases:['جمبري لحم 25-21','جمبرى لحم 21-25','جمبري مقشر 25-21','جمبرى مقشر 21-25','لحم 25/21','لحم 21/25'],price:1050},
+{name:'جمبرى لحم 30-26',aliases:['جمبري لحم 30-26','جمبرى لحم 26-30','جمبري مقشر 30-26','جمبرى مقشر 26-30','لحم 30/26','لحم 26/30'],price:950},
+{name:'جمبرى لحم 40-30',aliases:['جمبري لحم 40-30','جمبرى لحم 30-40','جمبري مقشر 40-30','جمبرى مقشر 30-40','لحم 40/30','لحم 30/40'],price:800},
+{name:'جمبرى لحم 50-40',aliases:['جمبري لحم 50-40','جمبرى لحم 40-50','جمبري مقشر 50-40','جمبرى مقشر 40-50','لحم 50/40','لحم 40/50'],price:770},
+{name:'جمبرى لحم 60-50',aliases:['جمبري لحم 60-50','جمبرى لحم 50-60','جمبري مقشر 60-50','جمبرى مقشر 50-60','لحم 60/50','لحم 50/60'],price:700},
+{name:'جمبرى لحم 70-60',aliases:['جمبري لحم 70-60','جمبرى لحم 60-70','جمبري مقشر 70-60','جمبرى مقشر 60-70','لحم 70/60','لحم 60/70'],price:650},
+{name:'جمبرى لحم 90-70',aliases:['جمبري لحم 90-70','جمبرى لحم 70-90','جمبري مقشر 90-70','جمبرى مقشر 70-90','لحم 90/70','لحم 70/90'],price:600},
+{name:'جمبرى لحم 110-90',aliases:['جمبري لحم 110-90','جمبرى لحم 90-110','جمبري مقشر 110-90','جمبرى مقشر 90-110','لحم 110/90','لحم 90/110'],price:580},
+{name:'جمبرى لحم 200-100',aliases:['جمبري لحم 200-100','جمبرى لحم 100-200','جمبري مقشر 200-100','جمبرى مقشر 100-200','لحم 200/100','لحم 100/200'],price:550},
+{name:'جمبرى بالذيل 20-16',aliases:['جمبري بالذيل 20-16','جمبرى بالذيل 16-20','جمبري بذيل 20-16','جمبرى بذيل 16-20'],price:1100},
+{name:'جمبرى بالذيل 25-21',aliases:['جمبري بالذيل 25-21','جمبرى بالذيل 21-25','جمبري بذيل 25-21','جمبرى بذيل 21-25'],price:1050},
+{name:'جمبرى بالذيل 30-26',aliases:['جمبري بالذيل 30-26','جمبرى بالذيل 26-30','جمبري بذيل 30-26','جمبرى بذيل 26-30'],price:1000},
+{name:'جمبرى قشر 12-8',aliases:['جمبري قشر 12-8','جمبرى قشر 8-12','جمبري قشريو 12-8','جمبرى بقشر 12/8','جمبرى قشر 12/8'],price:1450},
+{name:'جمبرى قشر يو 10',aliases:['جمبري قشر يو 10','جمبرى قشريو 10','جمبرى قشر u10','جمبري قشر u10','جمبرى قشر 10'],price:1350},
+{name:'جمبرى قشر 15-13',aliases:['جمبري قشر 15-13','جمبرى قشر 13-15','جمبرى بقشر 15/13','جمبرى قشر 15/13'],price:1100},
+{name:'جمبرى قشر 20-16',aliases:['جمبري قشر 20-16','جمبرى قشر 16-20','جمبرى بقشر 20/16','جمبرى قشر 20/16'],price:950},
+{name:'جمبرى قشر 30-20',aliases:['جمبري قشر 30-20','جمبرى قشر 20-30','جمبرى بقشر 30/20','جمبرى قشر 20/30','جمبرى قشر 30/20'],price:700},
+{name:'جمبرى قشر 40-30',aliases:['جمبري قشر 40-30','جمبرى قشر 30-40','جمبرى بقشر 40/30','جمبرى قشر 40/30','جمبرى قشر 30/40'],price:600},
+{name:'كاليماري بيضاء',aliases:['كاليماري بيضا','كاليمارى بيضاء','كلماري بيضاء'],price:500},
+{name:'كاليماري صيني',aliases:['كاليماري','كاليمارى','كلماري','سبيط صيني','كاليماري صينى'],price:160},
+{name:'كراب استيكس صيني',aliases:['كراب','كراب استيك','كراب استيكس','كراب ستيك','كراب ستاك','كابوريا استيك','كراب صيني'],price:150},
+{name:'كراب استيكس هندي',aliases:['كراب هندي','كراب استيك هندي','كراب استيكس هندي'],price:280},
+{name:'سوفت شيل',aliases:['soft shell','سوفت شيل كراب'],price:16000},
+{name:'بالك كود',aliases:['بلاك كود','black cod','بالك كود'],price:4500},
+{name:'هامشي',aliases:['هامتشي','هامشى','hamachi'],price:2500},
+{name:'شيليان سيباس',aliases:['شيليان سي باس','chilean seabass'],price:4500},
+{name:'سالمون هول مجمد',aliases:['سالمون كامل مجمد'],price:580},
+{name:'سالمون فيليه',aliases:['فيليه سالمون'],price:900},
+{name:'سالمون مدخن بالجلد',aliases:['مدخن بالجلد'],price:1000},
+{name:'سالمون مدخن منزوعة الجلد',aliases:['مدخن منزوع الجلد','سالمون مدخن منزوع الجلد'],price:1200},
+{name:'تونة ساكو',aliases:['تونه ساكو'],price:800},
+{name:'باسا 1 ك',aliases:['باسا 1ك','باسا ١ ك','باسا واحد كيلو'],price:160},
+{name:'باسا 5 ك',aliases:['باسا','سمك باسا','فيليه باسا','باسا ٥ ك','باسا 5ك'],price:170},
+{name:'سي سكالوب',aliases:['سى سكالوب','سي اسكالوب','scallop'],price:1900},
+{name:'بلح مفتوح',aliases:['بلح بحر مفتوح','بلح مفتوح','بلح'],price:370},
+{name:'بلح مقفول',aliases:['بلح بحر مقفول'],price:300},
+{name:'اخطبوط كبير',aliases:['أخطبوط كبير','اكتوبس كبير'],price:480},
+{name:'اخطبوط صغير',aliases:['أخطبوط صغير','اكتوبس صغير'],price:400},
+{name:'ذيول استاكوزا اماراتي',aliases:['زيول استاكوزا اماراتي','ذيول استاكوزا امراتي','استاكوزا اماراتي ذيول'],price:3300},
+{name:'استاكوزا هول',aliases:['استاكوزا كاملة','لوبستر هول'],price:1300},
+{name:'فيليه قشر بياض',aliases:['فيليه قشر بياض','قشر بياض فيليه'],price:600},
+{name:'سالمون هول فرش نرويجي',aliases:['سالمون هول','سالمون فرش','سالمون نرويجي','سالمون هول نرويجي'],price:1250},
+{name:'سبيط كامل بالراس',aliases:['سبيط كامل بالرأس','سبيط كامل'],price:450},
+{name:'سبيط ضهور فقط',aliases:['سبيط ظهور فقط','ضهور سبيط'],price:800},
+{name:'كينج كراب',aliases:['king crab'],price:7500},
+{name:'ذيول استاكوزا كندي',aliases:['زيول استاكوزا كندي','استاكوزا كندي ذيول'],price:6000},
+{name:'سالمون بورشن',aliases:['بورشن سالمون','salmon portion'],price:1000}
 ];
-
-function addRow(a='',b='',c='',d=''){
-  const tr=document.createElement('tr');
-  tr.innerHTML=`<td contenteditable="true">${a}</td><td contenteditable="true">${b}</td><td contenteditable="true">${c}</td><td contenteditable="true">${d}</td>`;
-  tbody.appendChild(tr);
+function setStatus(txt,type=''){const el=document.getElementById('status');el.className='status '+(type||'');el.textContent=txt;el.classList.remove('hidden')}
+function hideStatus(){document.getElementById('status').classList.add('hidden')}
+function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function toEnglishDigits(v){return String(v??'').replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d))}
+function cleanNumber(v){let s=toEnglishDigits(v).replace(/[,،]/g,'').replace(/[^0-9.\-]/g,'');let n=parseFloat(s);return Number.isFinite(n)?n:0}
+function fmt(n){return Number(n||0).toLocaleString('en-US',{maximumFractionDigits:2})}
+function normText(s){return toEnglishDigits(String(s||'')).replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/جمبري/g,'جمبرى').replace(/كلماري/g,'كاليماري').replace(/ستاك/g,'استيك').replace(/قشريو/g,'قشر يو').replace(/[ـًٌٍَُِّْ]/g,'').replace(/[^\u0600-\u06FF0-9\s\/-]/g,' ').replace(/\s+/g,' ').trim()}
+function extractSizeKey(s){
+  const t=toEnglishDigits(String(s||'')).replace(/[–—]/g,'-').replace(/\s+/g,' ');
+  const m=t.match(/(\d{1,3})\s*[\/-]\s*(\d{1,3})/);
+  if(!m)return '';
+  const a=parseInt(m[1],10),b=parseInt(m[2],10);
+  if(!Number.isFinite(a)||!Number.isFinite(b))return '';
+  return [Math.max(a,b),Math.min(a,b)].join('-');
 }
+function itemSizeKey(item){return extractSizeKey(item.name+' '+(item.aliases||[]).join(' '))}
+function hasWord(t,w){return new RegExp('(^|\\\\s)'+w+'(\\\\s|$)').test(t)}
+function scoreMatch(text,item){
+  const t=normText(text), itemText=normText(item.name+' '+(item.aliases||[]).join(' '));
+  const size=extractSizeKey(t), isize=itemSizeKey(item);
+  let score=0;
 
-function normalize(t){
-  return t.replace(/[A-Za-z]/g,' ')
-    .replace(/[^؀-ۿ0-9\s\/.\-]/g,' ')
-    .replace(/جمير/g,'جمبري')
-    .replace(/كلماري/g,'كاليماري')
-    .replace(/\s+/g,' ')
-    .trim();
-}
+  // Size is a hard signal. If user gave a size and item has a different size, heavily penalize.
+  if(size && isize && size!==isize) return -1000;
 
-function parseStrict(text){
-  tbody.innerHTML='';
-  const clean = normalize(text);
-  const found = new Set();
+  if(size && isize && size===isize) score+=180;
 
-  for (const rule of PRODUCT_RULES){
-    const ok = rule.keys.every(k => clean.includes(k)) || rule.keys.some(k => clean.includes(k));
-    if (ok && !found.has(rule.name)){
-      addRow(rule.name, rule.unit, rule.qty, rule.price);
-      found.add(rule.name);
-    }
+  // Shrimp category precision: قشر / لحم / بالذيل must not cross-match unless no category was detected.
+  const wantsShell=hasWord(t,'قشر')||hasWord(t,'بقشر')||hasWord(t,'قشرى');
+  const wantsMeat=hasWord(t,'لحم')||hasWord(t,'مقشر');
+  const wantsTail=t.includes('بالذيل')||t.includes('بذيل');
+  const itemShell=itemText.includes('قشر');
+  const itemMeat=itemText.includes('لحم');
+  const itemTail=itemText.includes('بالذيل')||itemText.includes('بذيل');
+  if(wantsShell && !itemShell) return -1000;
+  if(wantsMeat && !itemMeat) return -1000;
+  if(wantsTail && !itemTail) return -1000;
+  if(wantsShell && itemShell) score+=100;
+  if(wantsMeat && itemMeat) score+=100;
+  if(wantsTail && itemTail) score+=100;
+
+  // Country/origin precision: do not allow صيني and هندي to cross-match.
+  // This fixes cases like "كراب استيكس هندي" vs "كراب استيكس صيني".
+  const wantsChinese=t.includes('صيني')||t.includes('صينى')||t.includes('china')||t.includes('chinese');
+  const wantsIndian=t.includes('هندي')||t.includes('هندى')||t.includes('india')||t.includes('indian');
+  const itemChinese=itemText.includes('صيني')||itemText.includes('صينى');
+  const itemIndian=itemText.includes('هندي')||itemText.includes('هندى');
+  if(wantsChinese && itemIndian) return -1000;
+  if(wantsIndian && itemChinese) return -1000;
+  if(wantsChinese && itemChinese) score+=140;
+  if(wantsIndian && itemIndian) score+=140;
+
+  for(const a of [item.name,...(item.aliases||[])]){
+    const an=normText(a);
+    if(!an)continue;
+    if(t.includes(an)||an.includes(t))score=Math.max(score,260+an.length);
+    const words=an.split(' ').filter(w=>w.length>1 && !/^\\d+$/.test(w));
+    const hits=words.filter(w=>t.includes(w)).length;
+    if(words.length)score=Math.max(score,Math.round((hits/words.length)*90)+score);
   }
-
-  // إذا كانت الصورة من نفس النمط وتعرفنا على بعض العناصر فقط، أكمل الناقص تلقائيًا
-  if (found.size >= 4) {
-    for (const rule of PRODUCT_RULES) {
-      if (!found.has(rule.name)) {
-        addRow(rule.name, rule.unit, rule.qty, rule.price);
-      }
-    }
+  return score;
+}
+function findPrice(name,spec=''){
+  const q=(name+' '+spec).trim();
+  let best=null,bs=-999;
+  for(const item of PRICE_LIST){
+    const sc=scoreMatch(q,item);
+    if(sc>bs){bs=sc;best=item}
   }
-
-  if (!tbody.children.length) addRow();
+  return bs>=90?best:null
 }
+function addRow(name='',spec='',unit='',qty='',price='',total=''){const tr=document.createElement('tr');tr.innerHTML=`<td contenteditable="true">${esc(name)}</td><td contenteditable="true">${esc(spec)}</td><td contenteditable="true">${esc(unit)}</td><td contenteditable="true">${esc(qty)}</td><td class="priceCell" contenteditable="true">${esc(price)}</td><td class="totalCell">${esc(total)}</td><td><div class="rowBtns"><button class="mini r" onclick="this.closest('tr').remove();updateTotals()">حذف</button><button class="mini s" onclick="duplicateRow(this)">نسخ</button></div></td>`;tbody.appendChild(tr);tr.querySelectorAll('[contenteditable=true]').forEach(td=>td.addEventListener('input',()=>{applyPrices(false);updateTotals()}));updateTotals()}
+function duplicateRow(btn){const c=[...btn.closest('tr').children].slice(0,6).map(td=>td.innerText.trim());addRow(...c)}
+function getRows(){return [...tbody.querySelectorAll('tr')].map(tr=>[...tr.children].slice(0,6).map(td=>td.innerText.trim())).filter(r=>r.some(Boolean))}
+function fillTable(rows){tbody.innerHTML='';rows.forEach(r=>addRow(r.name||'',r.spec||r.specifications||'',r.unit||'',r.qty||r.quantity||'',r.price||'',r.total||''));if(!tbody.children.length)addRow();applyPrices(true);updateTotals()}
+function normalizeRows(rows){const seen=new Set(),out=[];for(const x of (rows||[])){const name=String(x.name||x.product||x.item||'').trim();if(!name)continue;if(/المجموع|اجمالي|الإجمالي|عنوان|التسليم|فاتورة|مشتريات|مدير|شركة|الفرع|تاريخ/i.test(name))continue;const obj={name,spec:String(x.spec||x.specifications||x.description||'').trim(),unit:String(x.unit||'').trim(),qty:String(x.qty||x.quantity||'').trim(),price:String(x.price||'').trim()};const k=[obj.name,obj.spec,obj.unit,obj.qty].join('|');if(!seen.has(k)){seen.add(k);out.push(obj)}}return out}
+function applyPrices(forceFill=true){let matched=0,missing=0;[...tbody.querySelectorAll('tr')].forEach(tr=>{const c=[...tr.children];const found=findPrice(c[0].innerText.trim(),c[1].innerText.trim());if(found){matched++;c[4].innerText=String(found.price);c[4].title='تمت مراجعة الليستة: '+found.name}else if(c[0].innerText.trim()){missing++;if(forceFill)c[4].innerText='';c[4].title='السعر غير موجود في الليستة'}});updateTotals();return{matched,missing}}
+function updateTotals(){let total=0,count=0,priced=0;[...tbody.querySelectorAll('tr')].forEach(tr=>{const c=[...tr.children];const qty=cleanNumber(c[3].innerText),price=cleanNumber(c[4].innerText);const rt=qty&&price?qty*price:0;c[5].innerText=rt?fmt(rt):'';if(c.slice(0,5).some(td=>td.innerText.trim()))count++;if(price)priced++;total+=rt});document.getElementById('rowsCount').innerText=count;document.getElementById('grandTotal').innerText=fmt(total);document.getElementById('priceState').innerText=count?`${priced}/${count}`:'—';return total}
+function fileToBase64(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]);r.onerror=reject;r.readAsDataURL(file)})}
+function fileToText(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsText(file,'utf-8')})}
+function getMime(file){if(file.type)return file.type;const n=file.name.toLowerCase();if(n.endsWith('.pdf'))return'application/pdf';if(n.endsWith('.png'))return'image/png';if(n.endsWith('.jpg')||n.endsWith('.jpeg'))return'image/jpeg';if(n.endsWith('.webp'))return'image/webp';return'application/octet-stream'}
+function extractJson(text){let t=String(text||'').trim();t=t.replace(/^```json\s*/i,'').replace(/^```\s*/,'').replace(/```$/,'').trim();const a=t.indexOf('['),b=t.lastIndexOf(']');if(a!==-1&&b!==-1&&b>a)t=t.slice(a,b+1);return JSON.parse(t)}
+async function analyzeWithGemini(file){const key=document.getElementById('apiKey').value.trim(),model=document.getElementById('model').value;if(!key)throw new Error('ضع Gemini API Key أولاً');const b64=await fileToBase64(file);const priceNames=PRICE_LIST.map(x=>`${x.name}=${x.price}`).join(' | ');const prompt=`You are a strict Arabic purchase order extractor AND price matcher.
 
-async function ocrSpace(file,key){
-  const fd = new FormData();
-  fd.append('file', file);
-  fd.append('language', 'ara');
-  fd.append('isTable', 'true');
-  fd.append('OCREngine', '2');
-  const res = await fetch('https://api.ocr.space/parse/image', {
-    method:'POST',
-    headers:{apikey:key},
-    body:fd
-  });
-  const json = await res.json();
-  return (json.ParsedResults || []).map(x => x.ParsedText).join('\n');
-}
+TASK:
+Extract product/order rows ONLY from the attached file/image/PDF, then match EACH extracted product against the PRICE LIST using meaning, Arabic spelling variations, OCR mistakes, and common seafood names.
 
-async function tesseractOCR(file){
-  const {data} = await Tesseract.recognize(file,'ara+eng');
-  return data.text || '';
-}
+RETURN ONLY valid JSON array. No markdown. No explanation.
 
-function readExcel(file){
-  const reader = new FileReader();
-  reader.onload = e => {
-    const wb = XLSX.read(e.target.result, {type:'array'});
-    const ws = wb.Sheets[wb.SheetNames[0]];
-    const rows = XLSX.utils.sheet_to_json(ws, {header:1});
-    tbody.innerHTML='';
-    rows.forEach((r,i) => {
-      if (i===0 && String(r[0]||'').includes('اسم الصنف')) return;
-      if (r && r[0]) addRow(r[0]||'', r[1]||'', r[2]||'', r[3]||'');
-    });
-    if (!tbody.children.length) addRow();
-  };
-  reader.readAsArrayBuffer(file);
-}
+Schema:
+[{
+  "name":"اسم الصنف كما هو ظاهر أو أقرب اسم واضح",
+  "spec":"المواصفات أو المقاس إن وجدت",
+  "unit":"الوحدة",
+  "qty":"الكمية المطلوبة",
+  "price":"سعر الوحدة من PRICE LIST فقط",
+  "matched":"اسم الصنف المطابق من PRICE LIST أو empty"
+}]
 
-document.getElementById('day').onchange = e => {
-  document.getElementById('customDay').style.display = e.target.value==='custom' ? 'block' : 'none';
-};
+PRICE LIST:
+${priceNames}
 
-document.getElementById('addRowBtn').onclick = () => addRow();
-
-document.getElementById('readBtn').onclick = async () => {
-  const file = document.getElementById('fileInput').files[0];
-  if (!file) return alert('اختر ملف أولاً');
-  if (/\.(xlsx|xls)$/i.test(file.name)) return readExcel(file);
-
-  let text = '';
-  const key = document.getElementById('apiKey').value.trim();
-  if (key) {
-    try { text = await ocrSpace(file,key); } catch(e) {}
+STRICT PRICING RULES:
+1. You MUST review the PRICE LIST for every row.
+2. If product matches any PRICE LIST item or alias, put the exact unit price from PRICE LIST in "price".
+3. Do NOT invent prices.
+4. Do NOT use row totals as unit prices.
+5. If no confident match exists, leave "price" empty and "matched" empty.
+6. Handle OCR mistakes like كراب ستاك = كراب استيكس, كلماري = كاليماري, جمبري = جمبرى.
+7. Extract every real product row visible.
+8. Do not include totals, dates, branches, address, supplier/customer names, notes, headers or signatures.
+9. Return [] if no rows found.`;const body={contents:[{role:'user',parts:[{text:prompt},{inline_data:{mime_type:getMime(file),data:b64}}]}],generationConfig:{temperature:0,response_mime_type:'application/json'}};const url=`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(key)}`;const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const json=await res.json();if(!res.ok){
+  const msg=(json.error&&json.error.message)||'Gemini API error';
+  if(msg.includes('limit: 0')||msg.includes('Quota exceeded')){
+    throw new Error('الموديل المختار غير متاح أو تعدى الحد المجاني الحالي. جرّب Gemini 2.5 Flash أو Gemini 3.1 Flash Lite.\n\nالتفاصيل:\n'+msg);
   }
-  if (!text) text = await tesseractOCR(file);
-  parseStrict(text);
-};
-
-function getDay(){
-  const d = document.getElementById('day').value;
-  return d==='custom' ? (document.getElementById('customDay').value.trim() || 'غدًا') : d;
-}
-
-document.getElementById('generateBtn').onclick = () => {
-  let msg = 'برجاء ارسال الاوردر';
-  const customer = document.getElementById('customer').value.trim();
-  if (customer) msg += ' ل ' + customer;
-  msg += ' ' + getDay() + '\n\n';
-  [...tbody.querySelectorAll('tr')].forEach(tr => {
-    const c = [...tr.children].map(td => td.innerText.trim());
-    if (c[0] && c[1] && c[2]) {
-      msg += `${c[2]} ${c[1]} ${c[0]}${c[3] ? ' بسعر ' + c[3] : ''}\n`;
-    }
-  });
-  const phone = document.getElementById('phone').value.trim();
-  const loc = document.getElementById('location').value.trim();
-  if (phone) msg += '\nرقم العميل:\n' + phone + '\n';
-  if (loc) msg += '\nاللوكيشن:\n' + loc;
-  document.getElementById('message').value = msg;
-};
-
-document.getElementById('waBtn').onclick = () => {
-  const msg = document.getElementById('message').value.trim();
-  if (!msg) return alert('أنشئ الرسالة أولاً');
-  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
-};
-
-document.getElementById('excelBtn').onclick = () => {
-  const data = [['اسم الصنف','الوحدة','الكمية','السعر']];
-  [...tbody.querySelectorAll('tr')].forEach(tr => {
-    data.push([...tr.children].map(td => td.innerText.trim()));
-  });
-  const ws = XLSX.utils.aoa_to_sheet(data);
-  ws['!cols'] = [{wch:45},{wch:15},{wch:12},{wch:12}];
-
-  // تنسيق الجدول بالكامل
-  const range = XLSX.utils.decode_range(ws['!ref']);
-  for (let R = range.s.r; R <= range.e.r; R++) {
-    for (let C = range.s.c; C <= range.e.c; C++) {
-      const addr = XLSX.utils.encode_cell({r:R, c:C});
-      if (!ws[addr]) continue;
-
-      const isHeader = R === 0;
-      ws[addr].s = {
-        font: {
-          bold: isHeader,
-          color: { rgb: isHeader ? 'FFFFFF' : '000000' },
-          name: 'Arial'
-        },
-        fill: {
-          fgColor: { rgb: isHeader ? '2563EB' : 'FFFFFF' }
-        },
-        alignment: {
-          horizontal: 'center',
-          vertical: 'center',
-          wrapText: true,
-          readingOrder: 2
-        },
-        border: {
-          top:    { style: 'thin', color: { rgb: 'D1D5DB' } },
-          bottom: { style: 'thin', color: { rgb: 'D1D5DB' } },
-          left:   { style: 'thin', color: { rgb: 'D1D5DB' } },
-          right:  { style: 'thin', color: { rgb: 'D1D5DB' } }
-        }
-      };
-    }
-  }
-
-  ws['!rows'] = data.map((_, i) => ({ hpx: i === 0 ? 28 : 24 }));
-
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Orders');
-  XLSX.writeFile(wb, 'orders.xlsx', { cellStyles: true });
-};
+  throw new Error(msg);
+}const text=json?.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('\n')||'';lastRaw=text;lastJson=json;return normalizeRows(extractJson(text))}
+function readExcel(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=e=>{try{const wb=XLSX.read(e.target.result,{type:'array'});const ws=wb.Sheets[wb.SheetNames[0]];const data=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});const rows=[];let headerMap=null;for(const r of data){const cells=r.map(x=>String(x??'').trim()),joined=cells.join(' ');if(!joined.trim())continue;if(/الصنف|المواصفات|الكمية|الوحدة|السعر/.test(joined)){headerMap={};cells.forEach((h,i)=>{if(/الصنف|المنتج|item|product/i.test(h))headerMap.name=i;if(/المواصفات|الوصف|spec|description/i.test(h))headerMap.spec=i;if(/الوحدة|unit/i.test(h))headerMap.unit=i;if(/الكمية|qty|quantity/i.test(h))headerMap.qty=i;if(/السعر|price/i.test(h))headerMap.price=i});continue}if(/المجموع|الإجمالي|اجمالي|التسليم|العنوان|شركة|فاتورة/.test(joined))continue;let obj={name:'',spec:'',unit:'',qty:'',price:''};if(headerMap&&headerMap.name!==undefined){obj={name:cells[headerMap.name]||'',spec:cells[headerMap.spec]||'',unit:cells[headerMap.unit]||'',qty:cells[headerMap.qty]||'',price:cells[headerMap.price]||''}}else{const visible=cells.filter(Boolean);for(const cell of visible){if(!obj.qty&&/^\d+(\.\d+)?$/.test(toEnglishDigits(cell))){obj.qty=cell;continue}if(!obj.unit&&/(كيلو|كرتونة|كجم|جم|باكت|باكيت|قطعة|عبوة|طن|علبة)/.test(cell)){obj.unit=cell;continue}if(!obj.name)obj.name=cell;else if(!obj.spec)obj.spec=cell;else if(!obj.price&&/^\d{2,6}([.,]\d+)?$/.test(toEnglishDigits(cell)))obj.price=cell}}if(obj.name)rows.push(obj)}resolve(normalizeRows(rows))}catch(err){reject(err)}};reader.onerror=reject;reader.readAsArrayBuffer(file)})}
+async function analyzeCsv(file){const txt=await fileToText(file);const lines=txt.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);const rows=[];for(const l of lines){if(/الصنف|المواصفات|الكمية|الوحدة|السعر/.test(l))continue;const c=l.split(/,|;|\t/).map(x=>x.trim()).filter(Boolean);if(c.length)rows.push({name:c[0]||'',spec:c[1]||'',unit:c[2]||'',qty:c[3]||'',price:c[4]||''})}return normalizeRows(rows)}
+document.getElementById('day').onchange=e=>{document.getElementById('customDay').style.display=e.target.value==='custom'?'block':'none'};document.getElementById('addRowBtn').onclick=()=>addRow();document.getElementById('clearBtn').onclick=()=>{tbody.innerHTML='';addRow();hideStatus();updateTotals()};document.getElementById('priceBtn').onclick=()=>{const r=applyPrices(true);setStatus(`تم التسعير من الليستة.\nمطابق: ${r.matched}\nغير موجود في الليستة: ${r.missing}`,r.missing?'warn':'ok')};
+document.getElementById('readBtn').onclick=async()=>{const file=document.getElementById('fileInput').files[0];if(!file)return alert('اختر ملف أولاً');const btn=document.getElementById('readBtn');btn.disabled=true;btn.textContent='جاري التحليل...';try{setStatus('جاري تحليل الملف بالذكاء الاصطناعي...');let rows=[];if(/\.(xlsx|xls)$/i.test(file.name))rows=await readExcel(file);else if(/\.csv$/i.test(file.name))rows=await analyzeCsv(file);else rows=await analyzeWithGemini(file);fillTable(rows);const pricing=applyPrices(true);setStatus(rows.length?`تم استخراج ${rows.length} صف بنجاح.\nتم تسعير ${pricing.matched} صف من الليستة.\nإجمالي الطلبية: ${document.getElementById('grandTotal').innerText}`:'لم يتم العثور على صفوف منتجات واضحة. جرّب صورة أوضح أو اضغط التشخيص.',rows.length?'ok':'warn')}catch(e){setStatus('خطأ: '+e.message,'err')}finally{btn.disabled=false;btn.textContent='تحليل AI'}};
+function getDay(){const d=document.getElementById('day').value;return d==='custom'?(document.getElementById('customDay').value.trim()||'غدًا'):d}
+document.getElementById('generateBtn').onclick=()=>{applyPrices(false);const total=updateTotals();let msg='برجاء ارسال الاوردر';const customer=document.getElementById('customer').value.trim();if(customer)msg+=' ل '+customer;msg+=' '+getDay()+'\n\n';getRows().forEach(c=>{if(c[0]&&c[3])msg+=`${c[3]} ${c[2]||''} ${c[0]}${c[1]?' '+c[1]:''}${c[4]?' بسعر '+c[4]:''}${c[5]?' | الإجمالي '+c[5]:''}\n`});msg+='\nإجمالي الطلبية: '+fmt(total)+'\n';const phone=document.getElementById('phone').value.trim(),loc=document.getElementById('location').value.trim();if(phone)msg+='\nرقم العميل:\n'+phone+'\n';if(loc)msg+='\nاللوكيشن:\n'+loc;document.getElementById('message').value=msg};
+document.getElementById('copyBtn').onclick=async()=>{const msg=document.getElementById('message').value.trim();if(!msg)return alert('أنشئ الرسالة أولاً');await navigator.clipboard.writeText(msg);setStatus('تم نسخ الرسالة.','ok')};document.getElementById('waBtn').onclick=()=>{const msg=document.getElementById('message').value.trim();if(!msg)return alert('أنشئ الرسالة أولاً');window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')};document.getElementById('diagBtn').onclick=()=>{setStatus('RAW GEMINI OUTPUT:\n'+(lastRaw||'لا يوجد تشخيص بعد. حلل ملف أولاً.'),'warn')};
+document.getElementById('excelBtn').onclick=()=>{applyPrices(false);const total=updateTotals();const data=[['اسم الصنف','المواصفات','الوحدة','الكمية','سعر الوحدة','الإجمالي']];getRows().forEach(r=>data.push(r));data.push(['','','','','إجمالي الطلبية',fmt(total)]);const ws=XLSX.utils.aoa_to_sheet(data);ws['!cols']=[{wch:40},{wch:28},{wch:14},{wch:12},{wch:14},{wch:16}];const range=XLSX.utils.decode_range(ws['!ref']);for(let R=range.s.r;R<=range.e.r;R++){for(let C=range.s.c;C<=range.e.c;C++){const addr=XLSX.utils.encode_cell({r:R,c:C});if(!ws[addr])continue;const isHeader=R===0,isTotal=R===range.e.r;ws[addr].s={font:{bold:isHeader||isTotal,color:{rgb:isHeader?'FFFFFF':'000000'},name:'Arial'},fill:{fgColor:{rgb:isHeader?'2563EB':(isTotal?'EAF7EF':'FFFFFF')}},alignment:{horizontal:'center',vertical:'center',wrapText:true,readingOrder:2},border:{top:{style:'thin',color:{rgb:'D1D5DB'}},bottom:{style:'thin',color:{rgb:'D1D5DB'}},left:{style:'thin',color:{rgb:'D1D5DB'}},right:{style:'thin',color:{rgb:'D1D5DB'}}}}}}ws['!rows']=data.map((_,i)=>({hpx:i===0?30:26}));const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Orders');XLSX.writeFile(wb,'orders_ai_total.xlsx',{cellStyles:true})};
+addRow();
 </script>
 </body>
 </html>
