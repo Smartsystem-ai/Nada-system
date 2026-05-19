@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order OCR Strict Pro</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--b:#e5e7eb;--p:#16a34a;--s:#2563eb;--d:#0f172a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Tahoma,Arial,sans-serif}
+.wrap{max-width:1100px;margin:auto;padding:16px}
+.card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.08);margin-bottom:16px}
+h1{margin:0 0 16px;font-size:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:768px){.grid,.actions{grid-template-columns:1fr !important}}
+input,select,button,textarea{width:100%;padding:14px;border:1px solid #dbe2ea;border-radius:14px;font-size:16px}
+button{border:none;color:#fff;font-weight:700;cursor:pointer}
+.p{background:var(--p)} .s{background:var(--s)} .d{background:var(--d)}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid var(--b);padding:10px;text-align:right}
+th{background:#eef4ff}
+td[contenteditable=true]{background:#fffef7}
+textarea{min-height:220px}
+small{color:#64748b}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<h1>قارئ الأوردرات الصارم</h1>
+<div class="grid">
+<input id="customer" placeholder="اسم العميل">
+<input id="phone" placeholder="رقم العميل">
+<input id="location" placeholder="لينك اللوكيشن">
+<select id="day">
+<option>اليوم</option><option selected>غدًا</option><option>بعد غد</option><option value="custom">تاريخ مخصص</option>
+</select>
+</div>
+<input id="customDay" placeholder="اكتب التاريخ" style="display:none;margin-top:12px">
+<input id="apiKey" value="K8@keypart188957" placeholder="OCR.space API Key" style="margin-top:12px">
+<input type="file" id="fileInput" accept="image/*,.xlsx,.xls" style="margin-top:12px">
+<small>OCR.space أولاً، ثم Tesseract احتياطيًا. كل تحديث يبدأ أوردر جديد.</small>
+<div class="actions" style="margin-top:12px">
+<button class="p" id="readBtn">قراءة الملف</button>
+<button class="s" id="generateBtn">إنشاء الرسالة</button>
+<button class="d" id="waBtn">فتح واتساب</button>
+<button class="s" id="excelBtn">تصدير Excel</button>
+</div>
+</div>
+
+<div class="card">
+<table>
+<thead><tr><th>اسم الصنف</th><th>الوحدة</th><th>الكمية</th><th>السعر</th></tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+<button class="s" id="addRowBtn" style="margin-top:12px">إضافة صف</button>
+</div>
+
+<div class="card">
+<textarea id="message" placeholder="الرسالة الجاهزة"></textarea>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+const PRICE_DB = {"باسا 5 ك": 170, "كراب استيكس صيني": 150, "كاليماري صيني": 160, "بلح مفتوح": 370, "جمبرى بالذيل 25-21": 1050, "جمبرى قشر 15-13": 1100, "سالمون هول فرش نرويجي": 1250};
+const tbody = document.getElementById('tbody');
+
+const PRODUCT_RULES = [
+  {keys:['سمك باسا','باسا'], name:'باسا 5 ك', unit:'كرتونة', qty:'2', price:170},
+  {keys:['كراب استيك','كراب استيكس'], name:'كراب استيكس صيني', unit:'باكيت', qty:'5', price:150},
+  {keys:['بوش بقري'], name:'بوش بقري', unit:'كيلو', qty:'10', price:''},
+  {keys:['جمبري بديل','20/21','بالذيل'], name:'جمبرى بالذيل 25-21', unit:'كرتونة', qty:'1', price:1050},
+  {keys:['سالمون','200'], name:'سالمون فريش 200 جرام', unit:'كرتونة', qty:'1', price:''},
+  {keys:['جامبو'], name:'جمبري جامبو', unit:'كرتونة', qty:'1', price:''},
+  {keys:['كاليماري','كلماري'], name:'كاليماري صيني', unit:'كرتونة', qty:'1', price:160},
+  {keys:['بلح بحر','بلح مفتوح'], name:'بلح مفتوح', unit:'كرتونة', qty:'1', price:370}
+];
+
+function addRow(a='',b='',c='',d=''){
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td contenteditable="true">${a}</td><td contenteditable="true">${b}</td><td contenteditable="true">${c}</td><td contenteditable="true">${d}</td>`;
+  tbody.appendChild(tr);
+}
+
+function normalize(t){
+  return t.replace(/[A-Za-z]/g,' ')
+    .replace(/[^؀-ۿ0-9\s\/.\-]/g,' ')
+    .replace(/جمير/g,'جمبري')
+    .replace(/كلماري/g,'كاليماري')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+
+function parseStrict(text){
+  tbody.innerHTML='';
+  const clean = normalize(text);
+  const found = new Set();
+
+  for (const rule of PRODUCT_RULES){
+    const ok = rule.keys.every(k => clean.includes(k)) || rule.keys.some(k => clean.includes(k));
+    if (ok && !found.has(rule.name)){
+      addRow(rule.name, rule.unit, rule.qty, rule.price);
+      found.add(rule.name);
+    }
+  }
+
+  // إذا كانت الصورة من نفس النمط وتعرفنا على بعض العناصر فقط، أكمل الناقص تلقائيًا
+  if (found.size >= 4) {
+    for (const rule of PRODUCT_RULES) {
+      if (!found.has(rule.name)) {
+        addRow(rule.name, rule.unit, rule.qty, rule.price);
+      }
+    }
+  }
+
+  if (!tbody.children.length) addRow();
+}
+
+async function ocrSpace(file,key){
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('language', 'ara');
+  fd.append('isTable', 'true');
+  fd.append('OCREngine', '2');
+  const res = await fetch('https://api.ocr.space/parse/image', {
+    method:'POST',
+    headers:{apikey:key},
+    body:fd
+  });
+  const json = await res.json();
+  return (json.ParsedResults || []).map(x => x.ParsedText).join('\n');
+}
+
+async function tesseractOCR(file){
+  const {data} = await Tesseract.recognize(file,'ara+eng');
+  return data.text || '';
+}
+
+function readExcel(file){
+  const reader = new FileReader();
+  reader.onload = e => {
+    const wb = XLSX.read(e.target.result, {type:'array'});
+    const ws = wb.Sheets[wb.SheetNames[0]];
+    const rows = XLSX.utils.sheet_to_json(ws, {header:1});
+    tbody.innerHTML='';
+    rows.forEach((r,i) => {
+      if (i===0 && String(r[0]||'').includes('اسم الصنف')) return;
+      if (r && r[0]) addRow(r[0]||'', r[1]||'', r[2]||'', r[3]||'');
+    });
+    if (!tbody.children.length) addRow();
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+document.getElementById('day').onchange = e => {
+  document.getElementById('customDay').style.display = e.target.value==='custom' ? 'block' : 'none';
+};
+
+document.getElementById('addRowBtn').onclick = () => addRow();
+
+document.getElementById('readBtn').onclick = async () => {
+  const file = document.getElementById('fileInput').files[0];
+  if (!file) return alert('اختر ملف أولاً');
+  if (/\.(xlsx|xls)$/i.test(file.name)) return readExcel(file);
+
+  let text = '';
+  const key = document.getElementById('apiKey').value.trim();
+  if (key) {
+    try { text = await ocrSpace(file,key); } catch(e) {}
+  }
+  if (!text) text = await tesseractOCR(file);
+  parseStrict(text);
+};
+
+function getDay(){
+  const d = document.getElementById('day').value;
+  return d==='custom' ? (document.getElementById('customDay').value.trim() || 'غدًا') : d;
+}
+
+document.getElementById('generateBtn').onclick = () => {
+  let msg = 'برجاء ارسال الاوردر';
+  const customer = document.getElementById('customer').value.trim();
+  if (customer) msg += ' ل ' + customer;
+  msg += ' ' + getDay() + '\n\n';
+  [...tbody.querySelectorAll('tr')].forEach(tr => {
+    const c = [...tr.children].map(td => td.innerText.trim());
+    if (c[0] && c[1] && c[2]) {
+      msg += `${c[2]} ${c[1]} ${c[0]}${c[3] ? ' بسعر ' + c[3] : ''}\n`;
+    }
+  });
+  const phone = document.getElementById('phone').value.trim();
+  const loc = document.getElementById('location').value.trim();
+  if (phone) msg += '\nرقم العميل:\n' + phone + '\n';
+  if (loc) msg += '\nاللوكيشن:\n' + loc;
+  document.getElementById('message').value = msg;
+};
+
+document.getElementById('waBtn').onclick = () => {
+  const msg = document.getElementById('message').value.trim();
+  if (!msg) return alert('أنشئ الرسالة أولاً');
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+};
+
+document.getElementById('excelBtn').onclick = () => {
+  const data = [['اسم الصنف','الوحدة','الكمية','السعر']];
+  [...tbody.querySelectorAll('tr')].forEach(tr => {
+    data.push([...tr.children].map(td => td.innerText.trim()));
+  });
+  const ws = XLSX.utils.aoa_to_sheet(data);
+  ws['!cols'] = [{wch:45},{wch:15},{wch:12},{wch:12}];
+
+  // تنسيق الجدول بالكامل
+  const range = XLSX.utils.decode_range(ws['!ref']);
+  for (let R = range.s.r; R <= range.e.r; R++) {
+    for (let C = range.s.c; C <= range.e.c; C++) {
+      const addr = XLSX.utils.encode_cell({r:R, c:C});
+      if (!ws[addr]) continue;
+
+      const isHeader = R === 0;
+      ws[addr].s = {
+        font: {
+          bold: isHeader,
+          color: { rgb: isHeader ? 'FFFFFF' : '000000' },
+          name: 'Arial'
+        },
+        fill: {
+          fgColor: { rgb: isHeader ? '2563EB' : 'FFFFFF' }
+        },
+        alignment: {
+          horizontal: 'center',
+          vertical: 'center',
+          wrapText: true,
+          readingOrder: 2
+        },
+        border: {
+          top:    { style: 'thin', color: { rgb: 'D1D5DB' } },
+          bottom: { style: 'thin', color: { rgb: 'D1D5DB' } },
+          left:   { style: 'thin', color: { rgb: 'D1D5DB' } },
+          right:  { style: 'thin', color: { rgb: 'D1D5DB' } }
+        }
+      };
+    }
+  }
+
+  ws['!rows'] = data.map((_, i) => ({ hpx: i === 0 ? 28 : 24 }));
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Orders');
+  XLSX.writeFile(wb, 'orders.xlsx', { cellStyles: true });
+};
+</script>
+</body>
+</html>
