@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Order AI Reader - Gemini Total V7</title>
+<title>Nada Seafood Orders — Dark Mode</title>
 <style>
 :root{--bg:#eef3f8;--card:#fff;--b:#e2e8f0;--text:#0f172a;--muted:#64748b;--p:#16a34a;--s:#2563eb;--d:#0f172a;--r:#dc2626;--w:#f59e0b;--soft:#f8fafc;--shadow:0 16px 38px rgba(15,23,42,.10)}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);font-family:Tahoma,Arial,sans-serif;color:var(--text)}.wrap{max-width:1200px;margin:auto;padding:16px}.card{background:rgba(255,255,255,.96);border:1px solid rgba(226,232,240,.9);border-radius:26px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}h1{margin:0 0 8px;font-size:clamp(22px,3vw,32px);line-height:1.35}.sub{margin:0 0 16px;color:var(--muted);line-height:1.8;font-size:14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.actions4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}input,select,button,textarea{width:100%;padding:14px 15px;border:1px solid #dbe2ea;border-radius:16px;font-size:16px;font-family:Tahoma,Arial,sans-serif;background:#fff;color:var(--text)}input:focus,select:focus,textarea:focus{outline:2px solid rgba(37,99,235,.18);border-color:#93c5fd}button{border:none;color:#fff;font-weight:800;cursor:pointer;transition:.15s;min-height:48px}button:hover{filter:brightness(.96);transform:translateY(-1px)}button:disabled{opacity:.55;cursor:not-allowed;transform:none}.p{background:var(--p)}.s{background:var(--s)}.d{background:var(--d)}.r{background:var(--r)}.w{background:var(--w)}.tableWrap{overflow:auto;border-radius:18px;border:1px solid var(--b);background:#fff;-webkit-overflow-scrolling:touch}table{width:100%;border-collapse:collapse;min-width:780px}th,td{border:1px solid var(--b);padding:11px 10px;text-align:right;vertical-align:middle;font-size:15px}th{background:#eef4ff;font-weight:900;white-space:nowrap}td[contenteditable=true]{background:#fffef7;min-width:95px}.priceCell,.totalCell{font-weight:800}.totalCell{background:#f8fafc}.summaryBar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.summaryBox{background:var(--soft);border:1px solid var(--b);border-radius:18px;padding:13px}.summaryBox b{display:block;font-size:18px;margin-top:4px}.summaryBox span{color:var(--muted);font-size:13px}textarea{min-height:230px;line-height:1.9;resize:vertical}small{color:var(--muted);line-height:1.7;display:block;margin-top:8px}.status{padding:12px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0;color:#334155;line-height:1.7;margin-top:12px;white-space:pre-wrap;max-height:340px;overflow:auto}.ok{background:#ecfdf5;border-color:#bbf7d0}.err{background:#fef2f2;border-color:#fecaca}.warn{background:#fffbeb;border-color:#fde68a}.rowBtns{display:flex;gap:6px}.mini{padding:7px 9px;border-radius:11px;font-size:13px;min-height:36px}.hidden{display:none}.pill{display:inline-block;background:#e0f2fe;color:#075985;border:1px solid #bae6fd;border-radius:999px;padding:5px 11px;font-size:12px;margin-inline-start:6px;white-space:nowrap}.hint{background:#f1f5f9;border:1px dashed #cbd5e1;border-radius:16px;padding:10px 12px;color:#475569;font-size:13px;line-height:1.7;margin-top:12px}
@@ -16,14 +16,55 @@
 body{background:radial-gradient(circle at top right,#dcecff 0,#f7fbff 33%,#f4f7fb 100%);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh}.wrap{max-width:1180px;padding:18px}.card{border-radius:var(--radius);padding:18px;border:1px solid rgba(230,237,245,.95);box-shadow:var(--shadow);backdrop-filter:blur(10px)}h1{letter-spacing:-.4px}.sub{font-size:14px}.pill{background:#edf6ff;color:#155eaa;border-color:#cfe6ff}.grid{gap:10px}.actions,.actions4{gap:9px}input,select,button,textarea{border-radius:16px;border-color:#d9e4f0;box-shadow:0 1px 0 rgba(16,32,51,.03);font-family:inherit}button{box-shadow:0 10px 18px rgba(15,23,42,.08)}button:hover{transform:none}.p{background:linear-gradient(135deg,#10b981,#0f9f6e)}.s{background:linear-gradient(135deg,#2563eb,#1d4ed8)}.d{background:linear-gradient(135deg,#1e293b,#0f172a)}.r{background:linear-gradient(135deg,#ef4444,#dc2626)}.w{background:linear-gradient(135deg,#f59e0b,#d97706)}.tableWrap{box-shadow:inset 0 0 0 1px #fff}.summaryBox{background:linear-gradient(180deg,#fff,#f7fafe)}.hint{background:#f8fbff;border-color:#cbdff5}.priceCell{background:#fff8e6!important;position:relative}.priceCell::after{content:'قابل للتعديل';display:block;font-size:10px;color:#9a6700;margin-top:3px;font-weight:600}.manualPrice{background:#ecfdf5!important;color:#047857}.manualPrice::after{content:'سعر معدل يدويًا';color:#047857}.matchedName{display:block;color:#6b7a90;font-size:11px;margin-top:4px}.topHero{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.heroIcon{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,#e0f2fe,#dcfce7);display:grid;place-items:center;font-size:26px;flex:0 0 auto}.quickNote{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.quickNote div{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:11px;font-size:12px;color:#475569;line-height:1.6}.stickyMobileBar{display:none}
 @media(max-width:760px){.wrap{padding:10px 10px 92px}.card{padding:14px;border-radius:22px}.topHero{gap:10px}.heroIcon{width:44px;height:44px;border-radius:15px;font-size:22px}h1{font-size:21px}.sub{font-size:12.5px;line-height:1.65}.grid{grid-template-columns:1fr}.actions{grid-template-columns:1fr 1fr}.actions button:first-child{grid-column:1/-1}.actions4{grid-template-columns:1fr 1fr}.tableWrap{overflow:visible;border:0;background:transparent}table,thead,tbody,tr,td{display:block;width:100%;min-width:0}table{min-width:0;border-collapse:separate}thead{display:none}tr{background:#fff;border:1px solid #e2e8f0;border-radius:18px;margin-bottom:12px;padding:10px;box-shadow:0 10px 22px rgba(15,23,42,.06)}td{border:0!important;border-bottom:1px dashed #e5edf6!important;padding:9px 8px!important;min-height:42px;font-size:15px}td:last-child{border-bottom:0!important}td::before{content:attr(data-label);display:block;color:#64748b;font-size:11px;font-weight:800;margin-bottom:5px}.totalCell{background:#f8fafc;border-radius:12px!important}.rowBtns{flex-direction:row}.mini{min-height:40px}.summaryBar{grid-template-columns:1fr 1fr}.summaryBar .summaryBox:nth-child(2){grid-column:1/-1;order:-1}.messageCard{position:static}.quickNote{grid-template-columns:1fr}.stickyMobileBar{position:fixed;display:grid;grid-template-columns:1fr 1fr;gap:8px;left:10px;right:10px;bottom:10px;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border:1px solid #dbeafe;border-radius:20px;padding:8px;box-shadow:0 14px 40px rgba(15,23,42,.18)}.stickyMobileBar button{min-height:48px;border-radius:15px}}
 
+/* ===== Premium Seafood Sales UI v2 ===== */
+:root{
+  --ink:#082032;--deep:#073b4c;--ocean:#006d77;--aqua:#00b4d8;--mint:#2dd4bf;--sand:#fff7ed;--cream:#fffaf0;--line:#d9eef2;
+  --bg:#edf8fa;--card:rgba(255,255,255,.88);--text:#082032;--muted:#607282;--p:#00a884;--s:#0077b6;--d:#102a43;--r:#e63946;--w:#ff9f1c;
+  --shadow:0 20px 55px rgba(3,74,92,.14);--radius:28px;
+}
+body{
+  background:
+    radial-gradient(circle at 18% 8%,rgba(45,212,191,.34),transparent 28%),
+    radial-gradient(circle at 88% 12%,rgba(0,180,216,.28),transparent 30%),
+    linear-gradient(145deg,#eefcff 0%,#f7fbfb 48%,#fff8ed 100%);
+  overflow-x:hidden;
+}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(135deg,rgba(0,109,119,.10) 25%,transparent 25%),linear-gradient(225deg,rgba(0,109,119,.08) 25%,transparent 25%);background-size:28px 28px;mask-image:linear-gradient(#000,transparent 75%)}
+.wrap{max-width:1220px}.card{background:var(--card);border:1px solid rgba(217,238,242,.9);box-shadow:var(--shadow);position:relative;overflow:hidden}.card::before{content:'';position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--mint),var(--aqua),#ffb703);opacity:.9}.topHero{align-items:center;background:linear-gradient(135deg,#073b4c,#006d77 55%,#00a6c8);color:white;margin:-18px -18px 16px;padding:22px 18px 20px;border-radius:0 0 28px 28px;position:relative;overflow:hidden}.topHero::after{content:'🐟';position:absolute;left:22px;bottom:-18px;font-size:92px;opacity:.08;transform:rotate(-12deg)}.topHero h1{color:white;font-size:clamp(24px,4vw,38px);margin-bottom:8px}.topHero .sub{color:rgba(255,255,255,.82);max-width:760px}.heroIcon{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);color:white;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 16px 38px rgba(0,0,0,.16)}.pill{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.35);vertical-align:middle}.quickNote{margin:12px 0 14px}.quickNote div{background:linear-gradient(180deg,#ffffff,#f3fbfc);border-color:var(--line);border-radius:20px;color:#375466;box-shadow:0 8px 20px rgba(0,109,119,.06)}input,select,textarea{background:rgba(255,255,255,.94);border:1px solid #cfe7ec;border-radius:18px;transition:.18s;box-shadow:0 6px 18px rgba(8,32,50,.04)}input:focus,select:focus,textarea:focus{outline:3px solid rgba(0,180,216,.16);border-color:#00b4d8;box-shadow:0 10px 24px rgba(0,119,182,.10)}input::placeholder,textarea::placeholder{color:#8ca0aa}button{border-radius:18px;letter-spacing:-.1px;box-shadow:0 12px 22px rgba(8,32,50,.10);position:relative;overflow:hidden}button::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.20),transparent);transform:translateX(115%);transition:.45s}button:hover::after{transform:translateX(-115%)}.p{background:linear-gradient(135deg,#00a884,#00c2a8)}.s{background:linear-gradient(135deg,#0077b6,#00a6d6)}.d{background:linear-gradient(135deg,#082032,#174a5b)}.r{background:linear-gradient(135deg,#e63946,#c1121f)}.w{background:linear-gradient(135deg,#ff9f1c,#fb8500)}small{background:#fff8ed;border:1px solid #ffedd5;border-radius:16px;padding:10px 12px;color:#8a5a18}.tableWrap{border-color:var(--line);border-radius:24px;background:linear-gradient(180deg,#fff,#f6fcfd)}th{background:linear-gradient(135deg,#073b4c,#006d77);color:#fff;border-color:rgba(255,255,255,.15);font-size:14px}td{border-color:#e2f1f3}.priceCell{background:#fff7db!important;color:#8a5a00}.totalCell{background:#ecfeff!important;color:#075985}.summaryBox{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#ffffff,#f2fbfc);box-shadow:0 10px 24px rgba(0,109,119,.06)}.summaryBox b{font-size:22px;color:#073b4c}.summaryBox span{font-weight:800;color:#6b7f89}.hint{background:linear-gradient(135deg,#f0fdfa,#fff7ed);border-color:#99f6e4;color:#335c67;border-radius:20px}.status{border-color:#cfe7ec;background:#f7feff}.ok{background:#ecfdf5;border-color:#86efac}.warn{background:#fffbeb;border-color:#fcd34d}.err{background:#fff1f2;border-color:#fda4af}.messageCard textarea{min-height:360px;background:linear-gradient(180deg,#fff,#f8feff);font-size:15.5px}.messageCard::after{content:'WhatsApp Message';position:absolute;top:16px;left:18px;color:#9ab0bb;font-size:11px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}.matchedName{color:#0081a7}.manualPrice{background:#dcfff4!important;color:#007f5f}.stickyMobileBar{box-shadow:0 18px 48px rgba(8,32,50,.22)!important}
+@media(max-width:760px){.topHero{margin:-14px -14px 14px;padding:18px 14px;border-radius:0 0 24px 24px}.topHero::after{font-size:72px}.heroIcon{display:none}.actions button{min-height:54px}.summaryBox{padding:14px}.summaryBox b{font-size:20px}tr{border:1px solid #cfe7ec!important;border-radius:22px!important;box-shadow:0 13px 28px rgba(0,109,119,.09)!important;overflow:hidden}tr::before{content:'صنف أوردر';display:block;margin:-10px -10px 8px;padding:9px 12px;background:linear-gradient(90deg,#073b4c,#00a6d6);color:white;font-size:12px;font-weight:900}td::before{color:#0077b6!important}.rowBtns{gap:8px}.mini{border-radius:14px}.messageCard textarea{min-height:260px}.stickyMobileBar{background:rgba(247,254,255,.9)!important;border-color:#bdeff4!important}.stickyMobileBar button{font-size:15px}}
+
+
+
+/* ===== Full Dark Mode — Seafood Premium ===== */
+:root{
+  --bg:#06131a;--card:rgba(10,25,35,.92);--b:#183646;--text:#e9fbff;--muted:#8fb2c0;--soft:#0c202b;
+  --ink:#e9fbff;--deep:#071923;--ocean:#0f8da1;--aqua:#22d3ee;--mint:#34d399;--sand:#1a140b;--cream:#101d24;--line:#1d4352;
+  --p:#10b981;--s:#0ea5e9;--d:#1e293b;--r:#ef4444;--w:#f59e0b;
+  --shadow:0 22px 60px rgba(0,0,0,.42);--radius:28px;
+}
+html{color-scheme:dark}
+body{
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 8%,rgba(34,211,238,.18),transparent 30%),
+    radial-gradient(circle at 88% 12%,rgba(16,185,129,.14),transparent 32%),
+    radial-gradient(circle at 50% 100%,rgba(14,165,233,.10),transparent 36%),
+    linear-gradient(145deg,#041017 0%,#071923 48%,#0b1f2b 100%)!important;
+}
+body::before{opacity:.18;background-image:linear-gradient(135deg,rgba(34,211,238,.12) 25%,transparent 25%),linear-gradient(225deg,rgba(52,211,153,.08) 25%,transparent 25%)}
+.card{background:rgba(8,22,31,.88)!important;border-color:rgba(42,88,107,.78)!important;box-shadow:var(--shadow)!important;color:var(--text);backdrop-filter:blur(16px)}
+.card::before{background:linear-gradient(90deg,#34d399,#22d3ee,#0ea5e9)!important;opacity:.95}.topHero{background:linear-gradient(135deg,#06131a,#0b3a47 55%,#0e7490)!important;color:#fff}.topHero .sub{color:rgba(233,251,255,.76)!important}.heroIcon{background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.22)!important}.pill{background:rgba(34,211,238,.12)!important;color:#bff8ff!important;border-color:rgba(34,211,238,.32)!important}.quickNote div{background:linear-gradient(180deg,#0b202b,#081923)!important;border-color:#1d4352!important;color:#a9c8d3!important;box-shadow:0 10px 24px rgba(0,0,0,.20)!important}.sub,small,.summaryBox span,.matchedName{color:var(--muted)!important}small{background:#101d24!important;border-color:#273f2d!important}.hint{background:linear-gradient(135deg,#0a2728,#151f18)!important;border-color:#16615d!important;color:#b7dfe2!important}.status{background:#0b202b!important;border-color:#1d4352!important;color:#d7f7ff!important}.ok{background:#09251b!important;border-color:#146c43!important}.warn{background:#281d08!important;border-color:#8a5a00!important}.err{background:#2a0e14!important;border-color:#8b1e2d!important}
+input,select,textarea{background:#071923!important;color:#e9fbff!important;border-color:#1f4b5c!important;box-shadow:0 8px 22px rgba(0,0,0,.18)!important}input:focus,select:focus,textarea:focus{outline:3px solid rgba(34,211,238,.18)!important;border-color:#22d3ee!important;box-shadow:0 12px 26px rgba(34,211,238,.10)!important}input::placeholder,textarea::placeholder{color:#6f93a1!important}select option{background:#071923;color:#e9fbff}.tableWrap{background:linear-gradient(180deg,#071923,#0b202b)!important;border-color:#1d4352!important}th{background:linear-gradient(135deg,#06131a,#0e7490)!important;color:#e9fbff!important;border-color:#1d4352!important}td{border-color:#173746!important;color:#e9fbff!important}td[contenteditable=true]{background:#0a1f2a!important}.priceCell{background:#2a2209!important;color:#ffd98a!important}.priceCell::after{color:#ffd98a!important}.manualPrice{background:#073424!important;color:#7dffca!important}.manualPrice::after{color:#7dffca!important}.totalCell{background:#082a38!important;color:#67e8f9!important}.summaryBox{background:linear-gradient(145deg,#0b202b,#071923)!important;border-color:#1d4352!important;box-shadow:0 12px 28px rgba(0,0,0,.22)!important}.summaryBox b{color:#e9fbff!important}.messageCard textarea{background:linear-gradient(180deg,#071923,#0a202a)!important;color:#e9fbff!important}.messageCard::after{color:#5e8795!important}.p{background:linear-gradient(135deg,#10b981,#059669)!important}.s{background:linear-gradient(135deg,#0ea5e9,#0284c7)!important}.d{background:linear-gradient(135deg,#334155,#0f172a)!important}.r{background:linear-gradient(135deg,#ef4444,#b91c1c)!important}.w{background:linear-gradient(135deg,#f59e0b,#b45309)!important}button{color:#fff!important;box-shadow:0 14px 28px rgba(0,0,0,.28)!important}
+@media(max-width:760px){tr{background:#081923!important;border-color:#1d4352!important;box-shadow:0 14px 30px rgba(0,0,0,.30)!important}tr::before{background:linear-gradient(90deg,#06131a,#0e7490)!important}td{border-bottom-color:#173746!important}td::before{color:#67e8f9!important}.stickyMobileBar{background:rgba(7,25,35,.92)!important;border-color:#1d4352!important;box-shadow:0 18px 50px rgba(0,0,0,.55)!important}.totalCell{background:#082a38!important}.summaryBar .summaryBox:nth-child(2){border-color:#22d3ee!important}}
+
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="card">
-    <div class="topHero"><div><h1>نظام قراءة وتسعير الأوردرات <span class="pill">Smart Mobile UI</span></h1>
-    <p class="sub">ارفع صورة أو ملف، راجع الأصناف، عدّل الأسعار بعد التحليل بحرية، ثم صدّر Excel أو رسالة واتساب. مصمم للموبايل أولاً.</p></div><div class="heroIcon">🧾</div></div>
-    <div class="quickNote"><div>💡 أي سعر تعدله يدويًا لن يتم استبداله تلقائيًا إلا لو ضغطت إعادة تسعير من الليستة.</div><div>📱 على الموبايل الجدول يظهر ككروت واضحة بدل سكرول طويل.</div></div>
+    <div class="topHero"><div><h1>Nada Seafood Orders <span class="pill">Premium UI</span></h1>
+    <p class="sub">سيستم سمك سريع للمبيعات: تحليل أوردرات، تسعير من الليستة، تعديل يدوي للأسعار، وتجهيز رسالة واتساب بشكل نظيف.</p></div><div class="heroIcon">🐟</div></div>
+    <div class="quickNote"><div>💸 السعر اليدوي محفوظ ومميز بلون مختلف عشان الفريق يعرف إنه متعدل.</div><div>📱 واجهة موبايل بكروت واضحة مناسبة للشغل السريع مع العملاء.</div></div>
     <div class="grid">
       <input id="customer" placeholder="اسم العميل"><input id="phone" placeholder="رقم العميل"><input id="location" placeholder="لينك اللوكيشن">
       <select id="day"><option>اليوم</option><option selected>غدًا</option><option>بعد غد</option><option value="custom">تاريخ مخصص</option></select>
@@ -41,7 +82,7 @@ body{background:radial-gradient(circle at top right,#dcecff 0,#f7fbff 33%,#f4f7f
     <input type="file" id="fileInput" accept="image/*,.pdf,.xlsx,.xls,.csv" style="margin-top:12px">
     <small>ملاحظة: تم ترك الموديلات التي لها Limits فعلية فقط في حسابك. لو ظهر Quota limit: 0 فالموديل غير متاح على الـ Free Tier. لا ترفع هذا الملف على موقع عام وفيه API Key ظاهر.</small>
     <div class="actions" style="margin-top:12px">
-      <button class="p" id="readBtn">تحليل AI</button><button class="s" id="priceBtn">مراجعة الأسعار</button><button class="s" id="generateBtn">تجهيز الرسالة</button><button class="d" id="waBtn">واتساب</button><button class="w" id="diagBtn">التشخيص</button>
+      <button class="p" id="readBtn">تحليل الأوردر</button><button class="s" id="priceBtn">تسعير من الليستة</button><button class="s" id="generateBtn">تجهيز فتح واتساب</button><button class="d" id="waBtn">فتح واتساب</button><button class="w" id="diagBtn">Debug</button>
     </div>
     <div id="status" class="status hidden"></div>
   </div>
@@ -49,10 +90,10 @@ body{background:radial-gradient(circle at top right,#dcecff 0,#f7fbff 33%,#f4f7f
     <div class="card">
       <div class="tableWrap"><table><thead><tr><th>اسم الصنف</th><th>المواصفات</th><th>الوحدة</th><th>الكمية</th><th>سعر الوحدة</th><th>الإجمالي</th><th>إجراءات</th></tr></thead><tbody id="tbody"></tbody></table></div>
       <div class="summaryBar"><div class="summaryBox"><span>عدد الصفوف</span><b id="rowsCount">0</b></div><div class="summaryBox"><span>إجمالي الطلبية</span><b id="grandTotal">0</b></div><div class="summaryBox"><span>حالة التسعير</span><b id="priceState">—</b></div></div>
-      <div class="actions4" style="margin-top:12px"><button class="s" id="addRowBtn">إضافة صف</button><button class="r" id="clearBtn">مسح الجدول</button><button class="d" id="copyBtn">نسخ الرسالة</button><button class="s" id="excelBtn">تصدير Excel</button></div>
+      <div class="actions4" style="margin-top:12px"><button class="s" id="addRowBtn">+ صنف جديد</button><button class="r" id="clearBtn">مسح الكل</button><button class="d" id="copyBtn">Copy Message</button><button class="s" id="excelBtn">Excel Export</button></div>
       <div class="hint">بعد التحليل راجع الكروت وعدّل أي سعر مباشرة. السعر اليدوي يفضل محفوظ، وزر إعادة تسعير داخل كل صف يرجع سعر الليستة للصنف فقط.</div>
     </div>
-    <div class="card messageCard"><textarea id="message" placeholder="الرسالة الجاهزة"></textarea></div>
+    <div class="card messageCard"><textarea id="message" placeholder="رسالة واتساب جاهزة للإرسال"></textarea></div>
   </div>
 </div>
   <div class="stickyMobileBar"><button class="p" onclick="document.getElementById('readBtn').click()">تحليل سريع</button><button class="d" onclick="document.getElementById('generateBtn').click()">رسالة</button></div>
@@ -194,7 +235,50 @@ function addRow(name='',spec='',unit='',qty='',price='',total=''){
 }
 function duplicateRow(btn){const c=[...btn.closest('tr').children].slice(0,6).map(td=>td.innerText.trim());addRow(...c)}
 function unlockPrice(btn){const tr=btn.closest('tr'),c=[...tr.children];c[4].dataset.manual='';c[4].classList.remove('manualPrice');const found=findPrice(c[0].innerText.trim(),c[1].innerText.trim());if(found){c[4].innerText=String(found.price);c[4].title='تمت مراجعة الليستة: '+found.name}else{c[4].innerText='';c[4].title='السعر غير موجود في الليستة'}updateTotals()}
-function getRows(){return [...tbody.querySelectorAll('tr')].map(tr=>[...tr.children].slice(0,6).map(td=>td.innerText.trim())).filter(r=>r.some(Boolean))}
+function getRows(){
+  return [...tbody.querySelectorAll('tr')].map(tr=>[...tr.children].slice(0,6).map(td=>td.innerText.trim())).filter(r=>r.some(Boolean))
+}
+function buildOrderMessage(){
+  applyPrices(false);
+  const total=updateTotals();
+  const rows=getRows();
+  const customer=document.getElementById('customer').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const loc=document.getElementById('location').value.trim();
+  let msg='برجاء ارسال الاوردر';
+  if(customer) msg+=' ل '+customer;
+  msg+=' '+getDay()+'\n\n';
+  const orderRows=rows.filter(c=>c[0]||c[1]||c[2]||c[3]||c[4]);
+  if(!orderRows.length){
+    msg+='لم يتم إضافة أي أصناف بعد.\n';
+  }else{
+    orderRows.forEach((c,i)=>{
+      const name=[c[0],c[1]].filter(Boolean).join(' ');
+      const qtyUnit=[c[3],c[2]].filter(Boolean).join(' ');
+      let line=(qtyUnit?qtyUnit+' ': '') + (name||'صنف بدون اسم');
+      if(c[4]) line+=' بسعر '+c[4];
+      if(c[5]) line+=' | الإجمالي '+c[5];
+      msg+=line+'\n';
+    });
+  }
+  msg+='\nإجمالي الطلبية: '+fmt(total)+'\n';
+  if(phone)msg+='\nرقم العميل:\n'+phone+'\n';
+  if(loc)msg+='\nاللوكيشن:\n'+loc;
+  return msg.trim();
+}
+function generateMessage(){
+  try{
+    const msg=buildOrderMessage();
+    const textarea=document.getElementById('message');
+    textarea.value=msg;
+    setStatus('تم إنشاء الرسالة بنجاح. تقدر تنسخها أو تفتحها واتساب.','ok');
+    textarea.scrollIntoView({behavior:'smooth',block:'center'});
+    return msg;
+  }catch(e){
+    setStatus('حصل خطأ أثناء إنشاء الرسالة: '+e.message,'err');
+    return '';
+  }
+}
 function fillTable(rows){tbody.innerHTML='';rows.forEach(r=>addRow(r.name||'',r.spec||r.specifications||'',r.unit||'',r.qty||r.quantity||'',r.price||'',r.total||''));if(!tbody.children.length)addRow();applyPrices(true);updateTotals()}
 function normalizeRows(rows){const seen=new Set(),out=[];for(const x of (rows||[])){const name=String(x.name||x.product||x.item||'').trim();if(!name)continue;if(/المجموع|اجمالي|الإجمالي|عنوان|التسليم|فاتورة|مشتريات|مدير|شركة|الفرع|تاريخ/i.test(name))continue;const obj={name,spec:String(x.spec||x.specifications||x.description||'').trim(),unit:String(x.unit||'').trim(),qty:String(x.qty||x.quantity||'').trim(),price:String(x.price||'').trim()};const k=[obj.name,obj.spec,obj.unit,obj.qty].join('|');if(!seen.has(k)){seen.add(k);out.push(obj)}}return out}
 function applyPrices(forceFill=true){let matched=0,missing=0,manual=0;[...tbody.querySelectorAll('tr')].forEach(tr=>{const c=[...tr.children];if(c[4].dataset.manual==='1'&&!forceFill){manual++;return}const found=findPrice(c[0].innerText.trim(),c[1].innerText.trim());if(found){matched++;if(forceFill||!c[4].innerText.trim()){c[4].innerText=String(found.price);c[4].dataset.manual='';c[4].classList.remove('manualPrice')}c[4].title='تمت مراجعة الليستة: '+found.name}else if(c[0].innerText.trim()){missing++;if(forceFill){c[4].innerText='';c[4].dataset.manual='';c[4].classList.remove('manualPrice')}c[4].title='السعر غير موجود في الليستة'}});updateTotals();return{matched,missing,manual}}
@@ -241,11 +325,23 @@ STRICT PRICING RULES:
 }const text=json?.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('\n')||'';lastRaw=text;lastJson=json;return normalizeRows(extractJson(text))}
 function readExcel(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=e=>{try{const wb=XLSX.read(e.target.result,{type:'array'});const ws=wb.Sheets[wb.SheetNames[0]];const data=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});const rows=[];let headerMap=null;for(const r of data){const cells=r.map(x=>String(x??'').trim()),joined=cells.join(' ');if(!joined.trim())continue;if(/الصنف|المواصفات|الكمية|الوحدة|السعر/.test(joined)){headerMap={};cells.forEach((h,i)=>{if(/الصنف|المنتج|item|product/i.test(h))headerMap.name=i;if(/المواصفات|الوصف|spec|description/i.test(h))headerMap.spec=i;if(/الوحدة|unit/i.test(h))headerMap.unit=i;if(/الكمية|qty|quantity/i.test(h))headerMap.qty=i;if(/السعر|price/i.test(h))headerMap.price=i});continue}if(/المجموع|الإجمالي|اجمالي|التسليم|العنوان|شركة|فاتورة/.test(joined))continue;let obj={name:'',spec:'',unit:'',qty:'',price:''};if(headerMap&&headerMap.name!==undefined){obj={name:cells[headerMap.name]||'',spec:cells[headerMap.spec]||'',unit:cells[headerMap.unit]||'',qty:cells[headerMap.qty]||'',price:cells[headerMap.price]||''}}else{const visible=cells.filter(Boolean);for(const cell of visible){if(!obj.qty&&/^\d+(\.\d+)?$/.test(toEnglishDigits(cell))){obj.qty=cell;continue}if(!obj.unit&&/(كيلو|كرتونة|كجم|جم|باكت|باكيت|قطعة|عبوة|طن|علبة)/.test(cell)){obj.unit=cell;continue}if(!obj.name)obj.name=cell;else if(!obj.spec)obj.spec=cell;else if(!obj.price&&/^\d{2,6}([.,]\d+)?$/.test(toEnglishDigits(cell)))obj.price=cell}}if(obj.name)rows.push(obj)}resolve(normalizeRows(rows))}catch(err){reject(err)}};reader.onerror=reject;reader.readAsArrayBuffer(file)})}
 async function analyzeCsv(file){const txt=await fileToText(file);const lines=txt.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);const rows=[];for(const l of lines){if(/الصنف|المواصفات|الكمية|الوحدة|السعر/.test(l))continue;const c=l.split(/,|;|\t/).map(x=>x.trim()).filter(Boolean);if(c.length)rows.push({name:c[0]||'',spec:c[1]||'',unit:c[2]||'',qty:c[3]||'',price:c[4]||''})}return normalizeRows(rows)}
-document.getElementById('day').onchange=e=>{document.getElementById('customDay').style.display=e.target.value==='custom'?'block':'none'};document.getElementById('addRowBtn').onclick=()=>addRow();document.getElementById('clearBtn').onclick=()=>{tbody.innerHTML='';addRow();hideStatus();updateTotals()};document.getElementById('priceBtn').onclick=()=>{const r=applyPrices(false);setStatus(`تمت مراجعة الأسعار من الليستة بدون لمس الأسعار المعدلة يدويًا.\nمطابق: ${r.matched}\nأسعار يدوية محفوظة: ${r.manual}\nغير موجود في الليستة: ${r.missing}`,r.missing?'warn':'ok')};
-document.getElementById('readBtn').onclick=async()=>{const file=document.getElementById('fileInput').files[0];if(!file)return alert('اختر ملف أولاً');const btn=document.getElementById('readBtn');btn.disabled=true;btn.textContent='جاري التحليل...';try{setStatus('جاري تحليل الملف بالذكاء الاصطناعي...');let rows=[];if(/\.(xlsx|xls)$/i.test(file.name))rows=await readExcel(file);else if(/\.csv$/i.test(file.name))rows=await analyzeCsv(file);else rows=await analyzeWithGemini(file);fillTable(rows);const pricing=applyPrices(true);setStatus(rows.length?`تم استخراج ${rows.length} صف بنجاح.\nتم تسعير ${pricing.matched} صف من الليستة.\nإجمالي الطلبية: ${document.getElementById('grandTotal').innerText}`:'لم يتم العثور على صفوف منتجات واضحة. جرّب صورة أوضح أو اضغط التشخيص.',rows.length?'ok':'warn')}catch(e){setStatus('خطأ: '+e.message,'err')}finally{btn.disabled=false;btn.textContent='تحليل AI'}};
+document.getElementById('day').onchange=e=>{document.getElementById('customDay').style.display=e.target.value==='custom'?'block':'none'};document.getElementById('addRowBtn').onclick=()=>addRow();document.getElementById('clearBtn').onclick=()=>{tbody.innerHTML='';addRow();hideStatus();updateTotals()};document.getElementById('priceBtn').onclick=()=>{const r=applyPrices(false);setStatus(`تمت تسعير من الليستة من الليستة بدون لمس الأسعار المعدلة يدويًا.\nمطابق: ${r.matched}\nأسعار يدوية محفوظة: ${r.manual}\nغير موجود في الليستة: ${r.missing}`,r.missing?'warn':'ok')};
+document.getElementById('readBtn').onclick=async()=>{const file=document.getElementById('fileInput').files[0];if(!file)return alert('اختر ملف أولاً');const btn=document.getElementById('readBtn');btn.disabled=true;btn.textContent='جاري التحليل...';try{setStatus('جاري تحليل الملف بالذكاء الاصطناعي...');let rows=[];if(/\.(xlsx|xls)$/i.test(file.name))rows=await readExcel(file);else if(/\.csv$/i.test(file.name))rows=await analyzeCsv(file);else rows=await analyzeWithGemini(file);fillTable(rows);const pricing=applyPrices(true);setStatus(rows.length?`تم استخراج ${rows.length} صف بنجاح.\nتم تسعير ${pricing.matched} صف من الليستة.\nإجمالي الطلبية: ${document.getElementById('grandTotal').innerText}`:'لم يتم العثور على صفوف منتجات واضحة. جرّب صورة أوضح أو اضغط Debug.',rows.length?'ok':'warn')}catch(e){setStatus('خطأ: '+e.message,'err')}finally{btn.disabled=false;btn.textContent='تحليل الأوردر'}};
 function getDay(){const d=document.getElementById('day').value;return d==='custom'?(document.getElementById('customDay').value.trim()||'غدًا'):d}
-document.getElementById('generateBtn').onclick=()=>{applyPrices(false);const total=updateTotals();let msg='برجاء ارسال الاوردر';const customer=document.getElementById('customer').value.trim();if(customer)msg+=' ل '+customer;msg+=' '+getDay()+'\n\n';getRows().forEach(c=>{if(c[0]&&c[3])msg+=`${c[3]} ${c[2]||''} ${c[0]}${c[1]?' '+c[1]:''}${c[4]?' بسعر '+c[4]:''}${c[5]?' | الإجمالي '+c[5]:''}\n`});msg+='\nإجمالي الطلبية: '+fmt(total)+'\n';const phone=document.getElementById('phone').value.trim(),loc=document.getElementById('location').value.trim();if(phone)msg+='\nرقم العميل:\n'+phone+'\n';if(loc)msg+='\nاللوكيشن:\n'+loc;document.getElementById('message').value=msg};
-document.getElementById('copyBtn').onclick=async()=>{const msg=document.getElementById('message').value.trim();if(!msg)return alert('أنشئ الرسالة أولاً');await navigator.clipboard.writeText(msg);setStatus('تم نسخ الرسالة.','ok')};document.getElementById('waBtn').onclick=()=>{const msg=document.getElementById('message').value.trim();if(!msg)return alert('أنشئ الرسالة أولاً');window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')};document.getElementById('diagBtn').onclick=()=>{setStatus('RAW GEMINI OUTPUT:\n'+(lastRaw||'لا يوجد تشخيص بعد. حلل ملف أولاً.'),'warn')};
+document.getElementById('generateBtn').onclick=()=>generateMessage();
+document.getElementById('copyBtn').onclick=async()=>{
+  let msg=document.getElementById('message').value.trim();
+  if(!msg) msg=generateMessage();
+  if(!msg)return alert('لا توجد رسالة للنسخ');
+  try{
+    await navigator.clipboard.writeText(msg);
+    setStatus('تم Copy Message.','ok');
+  }catch(e){
+    document.getElementById('message').focus();
+    document.getElementById('message').select();
+    setStatus('المتصفح منع النسخ التلقائي. الرسالة متحددة عندك، انسخها يدويًا.','warn');
+  }
+};document.getElementById('waBtn').onclick=()=>{let msg=document.getElementById('message').value.trim();if(!msg)msg=generateMessage();if(!msg)return alert('لا توجد رسالة للإرسال');window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')};document.getElementById('diagBtn').onclick=()=>{setStatus('RAW GEMINI OUTPUT:\n'+(lastRaw||'لا يوجد تشخيص بعد. حلل ملف أولاً.'),'warn')};
 document.getElementById('excelBtn').onclick=()=>{applyPrices(false);const total=updateTotals();const data=[['اسم الصنف','المواصفات','الوحدة','الكمية','سعر الوحدة','الإجمالي']];getRows().forEach(r=>data.push(r));data.push(['','','','','إجمالي الطلبية',fmt(total)]);const ws=XLSX.utils.aoa_to_sheet(data);ws['!cols']=[{wch:40},{wch:28},{wch:14},{wch:12},{wch:14},{wch:16}];const range=XLSX.utils.decode_range(ws['!ref']);for(let R=range.s.r;R<=range.e.r;R++){for(let C=range.s.c;C<=range.e.c;C++){const addr=XLSX.utils.encode_cell({r:R,c:C});if(!ws[addr])continue;const isHeader=R===0,isTotal=R===range.e.r;ws[addr].s={font:{bold:isHeader||isTotal,color:{rgb:isHeader?'FFFFFF':'000000'},name:'Arial'},fill:{fgColor:{rgb:isHeader?'2563EB':(isTotal?'EAF7EF':'FFFFFF')}},alignment:{horizontal:'center',vertical:'center',wrapText:true,readingOrder:2},border:{top:{style:'thin',color:{rgb:'D1D5DB'}},bottom:{style:'thin',color:{rgb:'D1D5DB'}},left:{style:'thin',color:{rgb:'D1D5DB'}},right:{style:'thin',color:{rgb:'D1D5DB'}}}}}}ws['!rows']=data.map((_,i)=>({hpx:i===0?30:26}));const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Orders');XLSX.writeFile(wb,'orders_ai_total.xlsx',{cellStyles:true})};
 addRow();
 </script>
